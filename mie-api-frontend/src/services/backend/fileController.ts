@@ -2,6 +2,14 @@
 /* eslint-disable */
 import { request } from '@umijs/max';
 
+/** downLoad POST /api/file/downLoad */
+export async function downLoadUsingPost(options?: { [key: string]: any }) {
+  return request<any>('/api/file/downLoad', {
+    method: 'POST',
+    ...(options || {}),
+  });
+}
+
 /** uploadFile POST /api/file/upload */
 export async function uploadFileUsingPost(
   // 叠加生成的Param类型 (非body参数swagger默认没有生成对象)

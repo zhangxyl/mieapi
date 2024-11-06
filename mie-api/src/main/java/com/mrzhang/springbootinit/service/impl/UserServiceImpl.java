@@ -7,12 +7,12 @@ import cn.hutool.core.util.RandomUtil;
 import cn.hutool.crypto.digest.DigestUtil;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
+import com.mrzhang.mieapicommon.model.entity.User;
 import com.mrzhang.springbootinit.common.ErrorCode;
 import com.mrzhang.springbootinit.constant.CommonConstant;
 import com.mrzhang.springbootinit.exception.BusinessException;
 import com.mrzhang.springbootinit.mapper.UserMapper;
 import com.mrzhang.springbootinit.model.dto.user.UserQueryRequest;
-import com.mrzhang.springbootinit.model.entity.User;
 import com.mrzhang.springbootinit.model.enums.UserRoleEnum;
 import com.mrzhang.springbootinit.model.vo.LoginUserVO;
 import com.mrzhang.springbootinit.model.vo.UserVO;
@@ -133,8 +133,6 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements Us
             // 用户不存在则创建
             if (user == null) {
                 user = new User();
-                user.setUnionId(unionId);
-                user.setMpOpenId(mpOpenId);
                 user.setUserAvatar(wxOAuth2UserInfo.getHeadImgUrl());
                 user.setUserName(wxOAuth2UserInfo.getNickname());
                 boolean result = this.save(user);

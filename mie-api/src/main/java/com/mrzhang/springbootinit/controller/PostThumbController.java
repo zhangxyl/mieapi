@@ -1,11 +1,11 @@
 package com.mrzhang.springbootinit.controller;
 
+import com.mrzhang.mieapicommon.model.entity.User;
 import com.mrzhang.springbootinit.common.BaseResponse;
 import com.mrzhang.springbootinit.common.ErrorCode;
 import com.mrzhang.springbootinit.common.ResultUtils;
 import com.mrzhang.springbootinit.exception.BusinessException;
 import com.mrzhang.springbootinit.model.dto.postthumb.PostThumbAddRequest;
-import com.mrzhang.springbootinit.model.entity.User;
 import com.mrzhang.springbootinit.service.PostThumbService;
 import com.mrzhang.springbootinit.service.UserService;
 

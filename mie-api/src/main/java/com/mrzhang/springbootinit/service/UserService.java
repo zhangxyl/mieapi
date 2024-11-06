@@ -2,8 +2,8 @@ package com.mrzhang.springbootinit.service;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.service.IService;
+import com.mrzhang.mieapicommon.model.entity.User;
 import com.mrzhang.springbootinit.model.dto.user.UserQueryRequest;
-import com.mrzhang.springbootinit.model.entity.User;
 import com.mrzhang.springbootinit.model.vo.LoginUserVO;
 import com.mrzhang.springbootinit.model.vo.UserVO;
 import java.util.List;

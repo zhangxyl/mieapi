@@ -1,9 +1,10 @@
 package com.mrzhang.springbootinit.service.impl;
 
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
+import com.mrzhang.mieapicommon.model.entity.InterfaceInfo;
 import com.mrzhang.springbootinit.common.ErrorCode;
 import com.mrzhang.springbootinit.exception.BusinessException;
-import com.mrzhang.springbootinit.model.entity.InterfaceInfo;
+
 import com.mrzhang.springbootinit.mapper.InterfaceInfoMapper;
 import com.mrzhang.springbootinit.service.InterfaceInfoService;
 import org.apache.commons.lang3.StringUtils;

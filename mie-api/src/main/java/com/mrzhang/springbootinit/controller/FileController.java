@@ -1,6 +1,7 @@
 package com.mrzhang.springbootinit.controller;
 
 import cn.hutool.core.io.FileUtil;
+import com.mrzhang.mieapicommon.model.entity.User;
 import com.mrzhang.springbootinit.common.BaseResponse;
 import com.mrzhang.springbootinit.common.ErrorCode;
 import com.mrzhang.springbootinit.common.ResultUtils;
@@ -8,14 +9,19 @@ import com.mrzhang.springbootinit.constant.FileConstant;
 import com.mrzhang.springbootinit.exception.BusinessException;
 import com.mrzhang.springbootinit.manager.CosManager;
 import com.mrzhang.springbootinit.model.dto.file.UploadFileRequest;
-import com.mrzhang.springbootinit.model.entity.User;
 import com.mrzhang.springbootinit.model.enums.FileUploadBizEnum;
 import com.mrzhang.springbootinit.service.UserService;
 
 import java.io.File;
+import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Date;
+import java.util.List;
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
+
+import com.mrzhang.springbootinit.utils.ExcelUtil;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.RandomStringUtils;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -28,7 +34,7 @@ import org.springframework.web.multipart.MultipartFile;
  * 文件接口
  *
  * @author <a href="https://github.com/zhangxyl">程序员小阳</a>
- * @from 
+ * @from
  */
 @RestController
 @RequestMapping("/file")
@@ -105,5 +111,31 @@ public class FileController {
                 throw new BusinessException(ErrorCode.PARAMS_ERROR, "文件类型错误");
             }
         }
+    }
+
+    @PostMapping("/downLoad")
+    private void downLoad() {
+        List<User> userList = new ArrayList<User>();
+        for (int i = 0; i <= 2000000; i++) {
+            User user = new User();
+            user.setUserName("123");
+            user.setUserAccount("123");
+            user.setUserAvatar("123");
+            user.setGender(1);
+            user.setUserRole("123");
+            user.setUserPassword("123");
+            user.setAccessKey("123");
+            user.setSecretKey("123");
+            user.setCreateTime(new Date());
+            user.setUpdateTime(new Date());
+            userList.add(user);
+        }
+        List<String> head = Arrays.asList("姓名", "账号", "昵称", "性别", "角色", "密码", "as", "sk", "创建时间", "更新时间");
+        try {
+            ExcelUtil.downloadExcel(userList, "人员清单", "人员清单", null, head, null);
+        } catch (IOException e) {
+            throw new BusinessException(ErrorCode.SYSTEM_ERROR, "下载失败：" + e.getMessage());
+        }
+
     }
 }

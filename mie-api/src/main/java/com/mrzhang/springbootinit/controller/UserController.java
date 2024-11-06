@@ -1,6 +1,7 @@
 package com.mrzhang.springbootinit.controller;
 
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
+import com.mrzhang.mieapicommon.model.entity.User;
 import com.mrzhang.springbootinit.common.BaseResponse;
 import com.mrzhang.springbootinit.common.DeleteRequest;
 import com.mrzhang.springbootinit.common.ErrorCode;
@@ -9,7 +10,6 @@ import com.mrzhang.springbootinit.config.WxOpenConfig;
 import com.mrzhang.springbootinit.constant.UserConstant;
 import com.mrzhang.springbootinit.exception.BusinessException;
 import com.mrzhang.springbootinit.exception.ThrowUtils;
-import com.mrzhang.springbootinit.model.entity.User;
 import com.mrzhang.springbootinit.model.vo.LoginUserVO;
 import com.mrzhang.springbootinit.model.vo.UserVO;
 import com.mrzhang.springbootinit.service.UserService;
@@ -22,6 +22,7 @@ import com.mrzhang.springbootinit.model.dto.user.UserRegisterRequest;
 import com.mrzhang.springbootinit.model.dto.user.UserUpdateMyRequest;
 import com.mrzhang.springbootinit.model.dto.user.UserUpdateRequest;
 
+import java.util.ArrayList;
 import java.util.List;
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
@@ -315,5 +316,15 @@ public class UserController {
         boolean result = userService.updateById(user);
         ThrowUtils.throwIf(!result, ErrorCode.OPERATION_ERROR);
         return ResultUtils.success(true);
+    }
+
+    @GetMapping("/getjavaHeapOOm")
+    public void getjavaHeapOOm() {
+        while (true) {
+            List<Object> oomlist = new ArrayList<>();
+            while (true) {
+                oomlist.add(new Object());
+            }
+        }
     }
 }

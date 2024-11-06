@@ -1,7 +1,7 @@
 package com.mrzhang.springbootinit.mapper;
 
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
-import com.mrzhang.springbootinit.model.entity.InterfaceInfo;
+import com.mrzhang.mieapicommon.model.entity.InterfaceInfo;
 
 /**
 * @author MrZhang

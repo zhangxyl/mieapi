@@ -1,7 +1,8 @@
 package com.mrzhang.springbootinit.service;
 
 import com.baomidou.mybatisplus.extension.service.IService;
-import com.mrzhang.springbootinit.model.entity.InterfaceInfo;
+import com.mrzhang.mieapicommon.model.entity.InterfaceInfo;
+
 
 /**
 * @author MrZhang

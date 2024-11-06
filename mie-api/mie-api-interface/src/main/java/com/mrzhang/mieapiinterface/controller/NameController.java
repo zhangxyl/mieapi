@@ -4,6 +4,7 @@ import com.mrzhang.mieapiclientsdk.model.User;
 import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
+import java.util.HashMap;
 
 /**
  * 名称 API

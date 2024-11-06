@@ -1,8 +1,8 @@
 package com.mrzhang.springbootinit.aop;
 
+import com.mrzhang.mieapicommon.model.entity.User;
 import com.mrzhang.springbootinit.common.ErrorCode;
 import com.mrzhang.springbootinit.exception.BusinessException;
-import com.mrzhang.springbootinit.model.entity.User;
 import com.mrzhang.springbootinit.model.enums.UserRoleEnum;
 import com.mrzhang.springbootinit.service.UserService;
 import com.mrzhang.springbootinit.annotation.AuthCheck;

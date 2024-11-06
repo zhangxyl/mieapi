@@ -4,6 +4,8 @@ import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.google.gson.Gson;
 import com.mrzhang.mieapiclientsdk.client.MieApiClient;
+import com.mrzhang.mieapicommon.model.entity.InterfaceInfo;
+import com.mrzhang.mieapicommon.model.entity.User;
 import com.mrzhang.springbootinit.annotation.AuthCheck;
 import com.mrzhang.springbootinit.common.*;
 import com.mrzhang.springbootinit.constant.CommonConstant;
@@ -12,8 +14,7 @@ import com.mrzhang.springbootinit.model.dto.interfaceInfo.InterfaceInfoAddReques
 import com.mrzhang.springbootinit.model.dto.interfaceInfo.InterfaceInfoInvokeRequest;
 import com.mrzhang.springbootinit.model.dto.interfaceInfo.InterfaceInfoQueryRequest;
 import com.mrzhang.springbootinit.model.dto.interfaceInfo.InterfaceInfoUpdateRequest;
-import com.mrzhang.springbootinit.model.entity.InterfaceInfo;
-import com.mrzhang.springbootinit.model.entity.User;
+
 import com.mrzhang.springbootinit.model.enums.InterfaceInfoStatusEnum;
 import com.mrzhang.springbootinit.service.InterfaceInfoService;
 import com.mrzhang.springbootinit.service.UserService;
@@ -29,8 +30,8 @@ import java.util.List;
 /**
  * 接口管理
  *
- * @author <a href="https://github.com/liyupi">程序员鱼皮</a>
- * @from <a href="https://yupi.icu">编程导航知识星球</a>
+ * @author <a href="https://github.com/zhangxyl">程序员小阳</a>
+
  */
 @RestController
 @RequestMapping("/interfaceInfo")

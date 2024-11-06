@@ -2,6 +2,7 @@ package com.mrzhang.springbootinit.controller;
 
 import cn.hutool.json.JSONUtil;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
+import com.mrzhang.mieapicommon.model.entity.User;
 import com.mrzhang.springbootinit.annotation.AuthCheck;
 import com.mrzhang.springbootinit.common.BaseResponse;
 import com.mrzhang.springbootinit.common.DeleteRequest;
@@ -15,7 +16,6 @@ import com.mrzhang.springbootinit.model.dto.post.PostEditRequest;
 import com.mrzhang.springbootinit.model.dto.post.PostQueryRequest;
 import com.mrzhang.springbootinit.model.dto.post.PostUpdateRequest;
 import com.mrzhang.springbootinit.model.entity.Post;
-import com.mrzhang.springbootinit.model.entity.User;
 import com.mrzhang.springbootinit.model.vo.PostVO;
 import com.mrzhang.springbootinit.service.PostService;
 import com.mrzhang.springbootinit.service.UserService;
